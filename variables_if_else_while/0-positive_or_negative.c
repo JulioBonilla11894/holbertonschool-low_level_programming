@@ -1,32 +1,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/**
- * main - Prints if number is positive, zero or negative
- * Return: Always (Success)
- *
- */
-
 int main(int argc, char *argv[]) {
-	// Check if the user provided a command-line argument
+
 	if (argc != 2) {
 	printf("Usage: %s <number>\n", argv[0]);
-	return 1;  // Exit with an error code
+	return 1;
 	}
 
-	int n;  // Declare n at the beginning
-	n = atoi(argv[1]);  // Convert the command-line argument to an integer
+	int n;
+	n = atoi(argv[1]);
 
-	printf("The number is: %d\n", n);  // Print the number
+	printf("The number is: %d\n", n);
 
-	// Check if the number is positive, zero, or negative
+
 	if (n > 0) {
-	printf("%d is positive\n", n);  // Provide n as an argument
+	printf("%d is positive\n", n);
 	} else if (n == 0) {
-	printf("%d is zero\n", n);  // Provide n as an argument
+	printf("%d is zero\n", n);
 	} else {
-	printf("%d is negative\n", n);  // Provide n as an argument
+	printf("%d is negative\n", n);
 	}
 
-	return 0;  // Ensure that main returns an integer
+	return 0;
 }
