@@ -1,14 +1,21 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
 
-/* betty style doc for function main goes there */
-int main(void)
-{
-	int n;
+int main() {
+    srand(time(0));  // Seed the random number generator
+    int n = rand() - RAND_MAX / 2;  // Generate a random number
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
-	return (0);
+    printf("The number is: %d\n", n);
+
+    // Check if the number is positive, negative, or zero
+    if (n > 0) {
+        printf("The number is positive\n");
+    } else if (n == 0) {
+        printf("The number is zero\n");
+    } else {
+        printf("The number is negative\n");
+    }
+
+    return 0;
 }
