@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
-/**
+/*
  * main - Prints if number is positive, zero or negative
- * Return: Always (Success)
+ '* Return: Always (Success)'
  *
  */
 int main(void)
