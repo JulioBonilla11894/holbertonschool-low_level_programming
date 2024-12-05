@@ -3,6 +3,7 @@
 
 /**
  * get_dnodeint_at_index - returns the node at a certain index in a linked list
+ *
  * @head: first node in the linked list
  * @index: index of the node to return
  *
@@ -10,14 +11,23 @@
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	unsigned int i = 0;
-	dlistint_t *temp = head;
+	unsigned int i;
+
+	if (head == NULL)
+		return (NULL);
 	
-	while (temp && i < index)
+	while (head->prev != NULL)
+		head = head->prev;
+
+	i = 0;
+
+	while (head != NULL)
 	{
-		temp = temp->next;
+		if (i == index)
+			break;
+		head = head->next;
 		i++;
 	}
 
-	return (temp ? temp : NULL);
+	return (head);
 }
