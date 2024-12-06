@@ -16,7 +16,7 @@ void check_to_stat(int stat, int fd, char *filename, char mode);
 int main(int argc, char *argv[])
 {
 	int src, dest, n_read = 1024, wrote, close_src, close_dest;
-	unsigned int mode = S_TRUSR | S_TWUSR | S_TRGRP | S_IWGRP | S_IROTH;
+	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
 	{
 		n_read = read(src, buffer, sizeof(buffer));
 		if (n_read == -1)
-			check_IO_stat(-1, -1 argv[1], 'O');
+			check_IO_stat(-1, -1, argv[1], 'O');
 		wrote = write(dest, buffer, n_read);
 		if (wrote == -1)
-			check_IO_stat(-1, -1, rgv[2], 'W');
+			check_IO_stat(-1, -1, argv[2], 'W');
 	}
 	close_src = close(src);
 	check_IO_stat(close_src, src, NULL, 'C');
