@@ -5,7 +5,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-void check_to_stat(int stat, int fd, char *filename, char mode);
+void check_IO_stat(int stat, int fd, char *filename, char mode);
 /**
  * main - function copies the content of one file to another
  * @argc: The argument count
